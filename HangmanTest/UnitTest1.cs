@@ -14,21 +14,7 @@ namespace HangmanTest
         {
         }
 
-        [Test]
-        public void mockWordsFromText_FakeWordGiven_MatchesCorrectWord()
-        {
-            Words tFP = new Words();
-
-            string fakeWord = tFP.theFilePath();
-
-            string trueWord = Game.correctWord;
-
-
-            Assert.AreEqual(fakeWord, trueWord);
-
-        }
-
-
+     
         [Test]
         public void ValidInput_UserPrintsNumber_ReturnFalse()
         {

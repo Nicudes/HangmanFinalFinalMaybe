@@ -8,7 +8,6 @@ namespace HangmanProjektArbete
 {
    public class TextHandler
     {
-
         public static void hangedMan()
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
@@ -54,7 +53,6 @@ namespace HangmanProjektArbete
                 Console.WriteLine("             " + Game.displayString + "              ");
                 Console.WriteLine("-------------------------------------------------                   ");
                 Console.WriteLine("                  Used letters                                      ");
-
             }
             if (Game.life == 3)
             {
@@ -94,7 +92,6 @@ namespace HangmanProjektArbete
                 Console.WriteLine("             " + Game.displayString + "              ");
                 Console.WriteLine("-------------------------------------------------                   ");
                 Console.WriteLine("                  Used letters                                      ");
-
             }
             if (Game.life == 1)
             {
@@ -146,9 +143,6 @@ namespace HangmanProjektArbete
             Console.WriteLine(Game.correctWord);
 
             Game.guessedLetter = Console.ReadLine().ToUpper();
-
-
         }
-
     }
 }

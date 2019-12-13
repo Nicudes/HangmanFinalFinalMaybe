@@ -15,7 +15,6 @@ namespace HangmanTest
         {
             Game.life = 5;
             Game.correctWord = "WIN";
-
         }
 
         [Test]
@@ -28,7 +27,6 @@ namespace HangmanTest
             int realLifeValue = Game.life;
 
             Assert.AreEqual(FullLifeExpected, realLifeValue);
-
         }
 
         [Test] //Det ska returna False eftersom koden är skriven att man endast är död om man life har värdet 0
@@ -45,11 +43,10 @@ namespace HangmanTest
 
         [Test]
         public void StartGame_DecreaseLife_ReturnsFour() 
-        {   Game game = new Game();
-
+        {   
+            Game game = new Game();
 
             Game.life--;
-
 
             int expectedLifeValue = 4;
 
@@ -70,28 +67,24 @@ namespace HangmanTest
         [Test]
         public void CheckIfDead_AreWeDead_ReturnFalse()
         {
-            
             Game game = new Game();
             Game.life = 1;
 
             bool result = game.checkIfDead();
 
             Assert.False(result);
-
         }
 
 
         [Test]
         public void CheckIfDead_AreWeDead_ReturnTrue()
         {
-
             Game game = new Game();
            
             Game.life = 0;
             bool result = game.checkIfDead();
 
             Assert.True(result);
-
         }
         [Test]
         public void CheckIfWin_InputWholeWord_ReturnTrue()
@@ -100,7 +93,6 @@ namespace HangmanTest
 
             Game.guessedLetter = "WIN";
             Game.correctWord = "WIN";
-
 
             bool result = game.checkIfWin();
 
@@ -129,7 +121,6 @@ namespace HangmanTest
             bool result = game.checkIfWin();
 
             Assert.True(result);
-
         }
         public void CheckIfWin_LettersRevealedValueIsNotWin_ReturnFalse()
         {
@@ -140,8 +131,6 @@ namespace HangmanTest
             bool result = game.checkIfWin() ;
 
             Assert.False(result);
-
-
         }
 
         [Test]
@@ -158,18 +147,11 @@ namespace HangmanTest
         [Test]
         public void ValidInput_InputLowerCase_ReturnTrue()
         {
-
-
             Game.guessedLetter = "w";
-            
 
             bool result = Game.ValidInput(Game.guessedLetter);
 
             Assert.True(result);
-
         }
-        
-       
-       
     }
 }

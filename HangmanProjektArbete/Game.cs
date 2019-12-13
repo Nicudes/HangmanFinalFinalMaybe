@@ -25,14 +25,12 @@ namespace HangmanProjektArbete
         {
             if (revealedLetters == correctWord.Length)
             {
-              
                 return true;
             }
             if (guessedLetter == correctWord)
             {
                 return true;
             }
-
             return false;
         }
         public bool checkIfDead()
@@ -53,7 +51,6 @@ namespace HangmanProjektArbete
                 Console.WriteLine("YOU WON!");
                 Console.ReadKey();
                 Menu.StartMenu(mainMenu: "");
-
             }
 
         }
@@ -64,9 +61,7 @@ namespace HangmanProjektArbete
                 Console.WriteLine("DED!");
                 Console.ReadKey();
                 Menu.StartMenu(mainMenu: "");
-
             }
-
         }
 
         public void wordDisplayHandle()
@@ -82,7 +77,6 @@ namespace HangmanProjektArbete
         {
             try
             {
-           
                 if (correctWord.Contains(guessedLetter))
                 {
                     for (int i = 0; i < correctWord.Length; i++)
@@ -99,7 +93,6 @@ namespace HangmanProjektArbete
             }
             catch (Exception)
             {
-
              
             }
            
@@ -108,27 +101,21 @@ namespace HangmanProjektArbete
 
         public static bool ValidInput(string guessedLetter)
         {
-        
             if (correctInput = Regex.IsMatch(guessedLetter, @"^[a-zA-Z]+$"))
             {
                 return true;
             }
-
             return false;
         }
 
         public bool validGuess()
         {
-   
             if (correctInput == true && guessedLetter.Length == 1 && !usedLetters.Contains(guessedLetter))
             {
-                
                 if (correctWord.Contains(guessedLetter))
                 {
                     Console.WriteLine("                   CORRECT!");
                     Thread.Sleep(1000);
-
-
                 }
                 else
                 {
@@ -136,7 +123,6 @@ namespace HangmanProjektArbete
                     life--;
                     Thread.Sleep(1000);
                     usedLetters.Add(guessedLetter);
-
                 }
                 return true;
             }
@@ -148,14 +134,11 @@ namespace HangmanProjektArbete
             return false;
         }
 
-
-
         public void GameStart()
         {
             wordDisplayHandle();
             do
             {
-
                 checkIfDead();
                 checkIfWin();
                 deadAction();
@@ -164,19 +147,7 @@ namespace HangmanProjektArbete
                 InsertGuessToWord();
                 ValidInput(guessedLetter);
                 validGuess();
-
-
-
-
-
             } while (checkIfDead() == false || checkIfWin() == true) ;
-
-
         }
-
-
-
-
-
     }
 }
