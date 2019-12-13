@@ -11,7 +11,7 @@ namespace HangmanProjektArbete
     public class Game
     {
         Random random = new Random(); //  använder oss av randomFunction
-        public static int life = 5;
+        public int life = 5;
         public static bool correctInput = false;
         public static string guessedLetter; // Guess är det vi skriver in för att gissa på ordet
         public static string correctWord = Words.WordsFromText(wordToCrack:"").ToUpper(); // det rätta ordet som vi tar in från en txt-fil

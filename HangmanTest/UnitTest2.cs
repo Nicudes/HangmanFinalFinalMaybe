@@ -14,12 +14,11 @@ namespace HangmanTest
         [Test]
         public void StartGame_Startinglife_IsFull()
         {
-            Game.life = 5;
             Game game = new Game();
          
             int FullLifeExpected = 5;
 
-            int realLifeValue = Game.life;
+            int realLifeValue = game.life;
 
             Assert.AreEqual(FullLifeExpected, realLifeValue);
 
@@ -30,7 +29,7 @@ namespace HangmanTest
         {
             Game game = new Game();
 
-            Game.life = -1;
+            game.life = -1;
 
             bool result = game.checkIfDead();
 
@@ -39,22 +38,24 @@ namespace HangmanTest
 
         [Test]
         public void StartGame_DecreaseLife_ReturnsFour() 
-        {
-            Game.life = 5;
-            Game.life--;
-            Game game = new Game();
+        {   Game game = new Game();
+
+
+            game.life--;
+
 
             int expectedLifeValue = 4;
 
-            Assert.AreEqual(expectedLifeValue, Game.life);
+            Assert.AreEqual(expectedLifeValue, game.life);
         }
 
         [Test]
         public void StartGame_WrongType_ReturnsAreNotEqual()
         {
+            Game game = new Game();
             string doubleLife = "5";
 
-            int realLifeValue = Game.life;
+            int realLifeValue = game.life;
 
             Assert.AreNotEqual(doubleLife, realLifeValue);
         }
@@ -64,7 +65,7 @@ namespace HangmanTest
         {
             
             Game game = new Game();
-            Game.life = 1;
+            game.life = 1;
 
             bool result = game.checkIfDead();
 
@@ -79,7 +80,7 @@ namespace HangmanTest
 
             Game game = new Game();
            
-            Game.life = 0;
+            game.life = 0;
             bool result = game.checkIfDead();
 
             Assert.True(result);
