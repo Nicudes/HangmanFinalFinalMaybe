@@ -11,7 +11,9 @@ namespace HangmanProjektArbete
     public class Game
     {
         Random random = new Random(); //  använder oss av randomFunction
-        public int life = 5;
+        public bool deadHandler;
+        public bool winHandler;
+        public static int life = 5;
         public static bool correctInput = false;
         public static string guessedLetter; // Guess är det vi skriver in för att gissa på ordet
         public static string correctWord = Words.WordsFromText(wordToCrack:"").ToUpper(); // det rätta ordet som vi tar in från en txt-fil
@@ -23,11 +25,7 @@ namespace HangmanProjektArbete
         {
             if (revealedLetters == correctWord.Length)
             {
-                //Console.Clear();
-                //Console.WriteLine("YOU WON!");
-                //Console.ReadKey();
-               //Menu.StartMenu(mainMenu:"");
-
+              
                 return true;
             }
             if (guessedLetter == correctWord)
@@ -41,13 +39,34 @@ namespace HangmanProjektArbete
         {
             if (life == 0)
             {
-
-                //Console.WriteLine("DED!");
-                //Console.ReadKey();
-                //Menu.StartMenu(mainMenu: "");
-                return true;
+            return true;
             }
             return false;
+        }
+
+        public void winAction()
+        {
+            winHandler = checkIfWin();
+            if (winHandler == true)
+            {
+                Console.Clear();
+                Console.WriteLine("YOU WON!");
+                Console.ReadKey();
+                Menu.StartMenu(mainMenu: "");
+
+            }
+
+        }
+        public void deadAction()
+        {
+            if (deadHandler == true)
+            {
+                Console.WriteLine("DED!");
+                Console.ReadKey();
+                Menu.StartMenu(mainMenu: "");
+
+            }
+
         }
 
         public void wordDisplayHandle()
@@ -139,6 +158,8 @@ namespace HangmanProjektArbete
 
                 checkIfDead();
                 checkIfWin();
+                deadAction();
+                winAction();
                 TextHandler.hangedMan();
                 InsertGuessToWord();
                 ValidInput(guessedLetter);

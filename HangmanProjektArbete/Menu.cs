@@ -13,6 +13,7 @@ namespace HangmanProjektArbete
         {
             Game game = new Game();
             Game.life = 5;
+       
 
             Console.Clear();
             Console.WriteLine("      Welcome to Hangman!");
@@ -46,6 +47,7 @@ namespace HangmanProjektArbete
                 case "4":
                     Console.WriteLine("You are now quitting...");
                     Console.ReadKey();
+                    //Environment.Exit(0);
                     break;
 
                 default:
