@@ -50,17 +50,19 @@ namespace HangmanProjektArbete
                 Console.Clear();
                 Console.WriteLine("YOU WON!");
                 Console.ReadKey();
-                Menu.StartMenu(mainMenu: "");
+                Environment.Exit(0);
+                //Menu.StartMenu(mainMenu: "");
             }
-
         }
+
         public void deadAction()
         {
             if (deadHandler == true)
             {
                 Console.WriteLine("DED!");
                 Console.ReadKey();
-                Menu.StartMenu(mainMenu: "");
+                Environment.Exit(0);
+                //Menu.StartMenu(mainMenu: "");
             }
         }
 

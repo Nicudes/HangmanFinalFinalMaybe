@@ -13,8 +13,7 @@ namespace HangmanProjektArbete
         {
             Game game = new Game();
             Game.life = 5;
-       
-
+            
             Console.Clear();
             Console.WriteLine("     Welcome to Hangman!");
             Console.WriteLine("    made by Daniel & Huy! \n \n");
